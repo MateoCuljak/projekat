@@ -1,0 +1,37 @@
+<div class="container"></div>
+    <h2>Naša Lokacija</h2>
+    <div id="map" style="height: 400px; width: 100%;"></div>
+</div>
+<script>
+    function initMap() {
+        var myLatLng = { lat: 35.6895, lng: 139.6917 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: 'Tokyo, Japan'
+        });
+    }
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+<div class="container">
+    <h2>Kontaktirajte Nas</h2>
+    <form id="contact-form">
+        <div class="form-group">
+            <label for="name">Ime:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="message">Poruka:</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Pošalji</button>
+    </form>
+</div>

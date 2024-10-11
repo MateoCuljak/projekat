@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moja Web Stranica o Japanu</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Tvoja CSS datoteka -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        #contactForm {
+            display: none; /* Sakrij formu na početku */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Japan</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#" onclick="showSection('home')">Početna</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" onclick="showSection('about')">O Japanu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="contactLink" onclick="showSection('contact')">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <div id="home">
+            <h2>Video o Japanu</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/0wEwhMGyXTY" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h2>Lokacija Tokija</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1662975.6383784553!2d138.45047736426767!3d35.50429569301457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x605d1b87f02e57e7%3A0x2e01618b22571b89!2sTokio%2C%20Japan!5e0!3m2!1shr!2sba!4v1726647741584!5m2!1shr!2sba" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div id="about" style="display: none;">
+            <h2>O Japanu</h2>
+            <p>Japan je zemlja smještena u istočnom dijelu Azije i sastoji se od četiri glavna otoka: Honshu, Hokkaido, Kyushu i Shikoku. Poznati su po svojoj bogatoj kulturi, modernoj tehnologiji i prekrasnim pejzažima.</p>
+            <p>Glavni grad Tokijo je jedna od najpoznatijih metropola na svijetu i poznat je po svojoj brzini, inovacijama i kulturnoj baštini.</p>
+            <img src="path_to_japan_image.jpg" alt="Slika Japana" class="img-fluid mt-4">
+        </div>
+
+        <div id="contact" style="display: none;">
+            <h2>Kontaktirajte Nas</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Ime:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Poruka:</label>
+                    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Pošalji</button>
+            </form>
+        </div>
+
+        <div id="carouselExampleCaptions" class="carousel slide mt-4">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="path_to_image1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Prva slika</h5>
+                        <p>Opis prve slike.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="path_to_image2.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Druga slika</h5>
+                        <p>Opis druge slike.</p>
+                    </div>
+                </div>
+                <!-- Dodajte više slika ako želite -->
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+        <input type="text" id="search" class="form-control mt-4" placeholder="Pretraži stranicu...">
+    </main>
+
+    <footer class="bg-light text-center text-lg-start mt-4">
+        <div class="container p-4">
+            <p>© 2024 Moja Web Stranica o Japanu</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS i ovisnosti -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script>
+        function showSection(sectionId) {
+            // Sakrij sve sekcije
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+            
+            // Prikaz odabrane sekcije
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Prikaz početne sekcije kad se stranica učita
+        window.onload = function() {
+            showSection('home');
+        };
+
+        // Skripta za prikazivanje kontakt forme
+        document.getElementById('contactLink').addEventListener('click', function(e) {
+            e.preventDefault(); // Sprečava defaultno ponašanje linka
+            showSection('contact');
+        });
+    </script>
+</body>
+</html>
